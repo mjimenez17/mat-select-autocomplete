@@ -1,59 +1,26 @@
-import { ɵɵdefineInjectable, ɵsetClassMetadata, Injectable, ɵɵgetCurrentView, ɵɵelementStart, ɵɵlistener, ɵɵrestoreView, ɵɵnextContext, ɵɵelementEnd, ɵɵproperty, ɵɵtext, ɵɵstyleProp, ɵɵadvance, ɵɵtextInterpolate1, ɵɵtextInterpolate, EventEmitter, ɵɵdefineComponent, ɵɵstaticViewQuery, ɵɵqueryRefresh, ɵɵloadQuery, ɵɵNgOnChangesFeature, ɵɵtemplate, ɵɵreference, ɵɵpropertyInterpolate, ɵɵpureFunction1, Component, Input, Output, ViewChild, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule } from '@angular/core';
-import { FormControl, NgControlStatus, FormControlDirective, NgModel, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormField, MatHint, MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelect, MatSelectTrigger, MatSelectModule } from '@angular/material/select';
-import { NgIf, NgClass, NgForOf, CommonModule } from '@angular/common';
-import { MatButton, MatButtonModule } from '@angular/material/button';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
-import { MatOption } from '@angular/material/core';
+import { __decorate, __metadata } from 'tslib';
+import { ɵɵdefineInjectable, Injectable, EventEmitter, Input, Output, ViewChild, Component, NgModule } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 var SelectAutocompleteService = /** @class */ (function () {
     function SelectAutocompleteService() {
     }
-    SelectAutocompleteService.ɵfac = function SelectAutocompleteService_Factory(t) { return new (t || SelectAutocompleteService)(); };
-    SelectAutocompleteService.ɵprov = ɵɵdefineInjectable({ token: SelectAutocompleteService, factory: SelectAutocompleteService.ɵfac, providedIn: 'root' });
+    SelectAutocompleteService.ɵprov = ɵɵdefineInjectable({ factory: function SelectAutocompleteService_Factory() { return new SelectAutocompleteService(); }, token: SelectAutocompleteService, providedIn: "root" });
+    SelectAutocompleteService = __decorate([
+        Injectable({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], SelectAutocompleteService);
     return SelectAutocompleteService;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(SelectAutocompleteService, [{
-        type: Injectable,
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return []; }, null); })();
 
-var _c0 = ["selectElem"];
-function SelectAutocompleteComponent_mat_checkbox_4_Template(rf, ctx) { if (rf & 1) {
-    var _r16 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-checkbox", 12);
-    ɵɵlistener("ngModelChange", function SelectAutocompleteComponent_mat_checkbox_4_Template_mat_checkbox_ngModelChange_0_listener($event) { ɵɵrestoreView(_r16); var ctx_r15 = ɵɵnextContext(); return ctx_r15.selectAllChecked = $event; })("change", function SelectAutocompleteComponent_mat_checkbox_4_Template_mat_checkbox_change_0_listener($event) { ɵɵrestoreView(_r16); var ctx_r17 = ɵɵnextContext(); return ctx_r17.toggleSelectAll($event); });
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var ctx_r11 = ɵɵnextContext();
-    ɵɵproperty("ngModel", ctx_r11.selectAllChecked);
-} }
-function SelectAutocompleteComponent_mat_option_13_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "mat-option", 13);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var option_r18 = ctx.$implicit;
-    var ctx_r13 = ɵɵnextContext();
-    ɵɵstyleProp("display", ctx_r13.hideOption(option_r18) ? "none" : "flex");
-    ɵɵproperty("disabled", option_r18.disabled)("value", option_r18[ctx_r13.value]);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1("", option_r18[ctx_r13.display], " ");
-} }
-function SelectAutocompleteComponent_mat_hint_14_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "mat-hint", 14);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var ctx_r14 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r14.errorMsg);
-} }
-var _c1 = function (a0) { return { "pl-1": a0 }; };
 var SelectAutocompleteComponent = /** @class */ (function () {
     function SelectAutocompleteComponent() {
         this.selectPlaceholder = 'search...';
@@ -199,102 +166,83 @@ var SelectAutocompleteComponent = /** @class */ (function () {
     SelectAutocompleteComponent.prototype.trackByFn = function (index, item) {
         return item.value;
     };
-    SelectAutocompleteComponent.ɵfac = function SelectAutocompleteComponent_Factory(t) { return new (t || SelectAutocompleteComponent)(); };
-    SelectAutocompleteComponent.ɵcmp = ɵɵdefineComponent({ type: SelectAutocompleteComponent, selectors: [["mat-select-autocomplete"]], viewQuery: function SelectAutocompleteComponent_Query(rf, ctx) { if (rf & 1) {
-            ɵɵstaticViewQuery(_c0, true);
-        } if (rf & 2) {
-            var _t;
-            ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.selectElem = _t.first);
-        } }, inputs: { selectPlaceholder: "selectPlaceholder", placeholder: "placeholder", options: "options", disabled: "disabled", display: "display", value: "value", formControl: "formControl", errorMsg: "errorMsg", showErrorMsg: "showErrorMsg", selectedOptions: "selectedOptions", multiple: "multiple", labelCount: "labelCount", appearance: "appearance" }, outputs: { selectionChange: "selectionChange" }, features: [ɵɵNgOnChangesFeature], decls: 15, vars: 14, consts: [[3, "appearance"], [3, "placeholder", "formControl", "multiple", "ngModel", "ngModelChange", "selectionChange"], ["selectElem", ""], [1, "box-search"], ["color", "primary", "class", "box-select-all", 3, "ngModel", "ngModelChange", "change", 4, "ngIf"], ["type", "text", 3, "ngClass", "placeholder", "input"], ["searchInput", ""], [1, "box-search-icon", 3, "click"], ["mat-icon-button", "", 1, "search-button"], ["aria-label", "Search icon", 1, "mat-24"], [3, "disabled", "value", "display", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["style", "color:red", 4, "ngIf"], ["color", "primary", 1, "box-select-all", 3, "ngModel", "ngModelChange", "change"], [3, "disabled", "value"], [2, "color", "red"]], template: function SelectAutocompleteComponent_Template(rf, ctx) { if (rf & 1) {
-            var _r19 = ɵɵgetCurrentView();
-            ɵɵelementStart(0, "mat-form-field", 0);
-            ɵɵelementStart(1, "mat-select", 1, 2);
-            ɵɵlistener("ngModelChange", function SelectAutocompleteComponent_Template_mat_select_ngModelChange_1_listener($event) { return ctx.selectedValue = $event; })("selectionChange", function SelectAutocompleteComponent_Template_mat_select_selectionChange_1_listener($event) { return ctx.onSelectionChange($event); });
-            ɵɵelementStart(3, "div", 3);
-            ɵɵtemplate(4, SelectAutocompleteComponent_mat_checkbox_4_Template, 1, 1, "mat-checkbox", 4);
-            ɵɵelementStart(5, "input", 5, 6);
-            ɵɵlistener("input", function SelectAutocompleteComponent_Template_input_input_5_listener() { ɵɵrestoreView(_r19); var _r12 = ɵɵreference(6); return ctx.filterItem(_r12.value); });
-            ɵɵelementEnd();
-            ɵɵelementStart(7, "div", 7);
-            ɵɵlistener("click", function SelectAutocompleteComponent_Template_div_click_7_listener() { ɵɵrestoreView(_r19); var _r12 = ɵɵreference(6); ctx.filterItem(""); return _r12.value = ""; });
-            ɵɵelementStart(8, "button", 8);
-            ɵɵelementStart(9, "mat-icon", 9);
-            ɵɵtext(10, "clear");
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵelementStart(11, "mat-select-trigger");
-            ɵɵtext(12);
-            ɵɵelementEnd();
-            ɵɵtemplate(13, SelectAutocompleteComponent_mat_option_13_Template, 2, 5, "mat-option", 10);
-            ɵɵelementEnd();
-            ɵɵtemplate(14, SelectAutocompleteComponent_mat_hint_14_Template, 2, 1, "mat-hint", 11);
-            ɵɵelementEnd();
-        } if (rf & 2) {
-            ɵɵpropertyInterpolate("appearance", ctx.appearance);
-            ɵɵadvance(1);
-            ɵɵproperty("placeholder", ctx.placeholder)("formControl", ctx.formControl)("multiple", ctx.multiple)("ngModel", ctx.selectedValue);
-            ɵɵadvance(3);
-            ɵɵproperty("ngIf", ctx.multiple);
-            ɵɵadvance(1);
-            ɵɵproperty("ngClass", ɵɵpureFunction1(12, _c1, !ctx.multiple))("placeholder", ctx.selectPlaceholder);
-            ɵɵadvance(7);
-            ɵɵtextInterpolate1(" ", ctx.onDisplayString(), " ");
-            ɵɵadvance(1);
-            ɵɵproperty("ngForOf", ctx.options)("ngForTrackBy", ctx.trackByFn);
-            ɵɵadvance(1);
-            ɵɵproperty("ngIf", ctx.showErrorMsg);
-        } }, directives: [MatFormField, MatSelect, NgControlStatus, FormControlDirective, NgIf, NgClass, MatButton, MatIcon, MatSelectTrigger, NgForOf, MatCheckbox, NgModel, MatOption, MatHint], styles: [".box-search[_ngcontent-%COMP%] {\n        margin: 8px;\n        border-radius: 2px;\n        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),\n          0 0 0 1px rgba(0, 0, 0, 0.08);\n        transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);\n        display: flex;\n      }\n      .box-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n        flex: 1;\n        border: none;\n        outline: none;\n      }\n      .box-select-all[_ngcontent-%COMP%] {\n        width: 36px;\n        line-height: 33px;\n        color: #808080;\n        text-align: center;\n      }\n      .search-button[_ngcontent-%COMP%] {\n        width: 36px;\n        height: 36px;\n        line-height: 33px;\n        color: #808080;\n      }\n      .pl-1[_ngcontent-%COMP%] {\n        padding-left: 1rem;\n      }"] });
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "selectPlaceholder", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], SelectAutocompleteComponent.prototype, "placeholder", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "options", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "disabled", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "display", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "value", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", FormControl)
+    ], SelectAutocompleteComponent.prototype, "formControl", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "errorMsg", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "showErrorMsg", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "selectedOptions", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "multiple", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "labelCount", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], SelectAutocompleteComponent.prototype, "appearance", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], SelectAutocompleteComponent.prototype, "selectionChange", void 0);
+    __decorate([
+        ViewChild('selectElem', { static: true }),
+        __metadata("design:type", Object)
+    ], SelectAutocompleteComponent.prototype, "selectElem", void 0);
+    SelectAutocompleteComponent = __decorate([
+        Component({
+            selector: 'mat-select-autocomplete',
+            template: "\n    <mat-form-field appearance=\"{{ appearance }}\">\n      <mat-select\n        #selectElem\n        [placeholder]=\"placeholder\"\n        [formControl]=\"formControl\"\n        [multiple]=\"multiple\"\n        [(ngModel)]=\"selectedValue\"\n        (selectionChange)=\"onSelectionChange($event)\"\n      >\n        <div class=\"box-search\">\n          <mat-checkbox\n            *ngIf=\"multiple\"\n            color=\"primary\"\n            class=\"box-select-all\"\n            [(ngModel)]=\"selectAllChecked\"\n            (change)=\"toggleSelectAll($event)\"\n          ></mat-checkbox>\n          <input\n            #searchInput\n            type=\"text\"\n            [ngClass]=\"{ 'pl-1': !multiple }\"\n            (input)=\"filterItem(searchInput.value)\"\n            [placeholder]=\"selectPlaceholder\"\n          />\n          <div\n            class=\"box-search-icon\"\n            (click)=\"filterItem(''); searchInput.value = ''\"\n          >\n            <button mat-icon-button class=\"search-button\">\n              <mat-icon class=\"mat-24\" aria-label=\"Search icon\">clear</mat-icon>\n            </button>\n          </div>\n        </div>\n        <mat-select-trigger>\n          {{ onDisplayString() }}\n        </mat-select-trigger>\n        <mat-option\n          *ngFor=\"let option of options; trackBy: trackByFn\"\n          [disabled]=\"option.disabled\"\n          [value]=\"option[value]\"\n          [style.display]=\"hideOption(option) ? 'none' : 'flex'\"\n          >{{ option[display] }}\n        </mat-option>\n      </mat-select>\n      <mat-hint style=\"color:red\" *ngIf=\"showErrorMsg\">{{ errorMsg }}</mat-hint>\n    </mat-form-field>\n  ",
+            styles: ["\n      .box-search {\n        margin: 8px;\n        border-radius: 2px;\n        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),\n          0 0 0 1px rgba(0, 0, 0, 0.08);\n        transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);\n        display: flex;\n      }\n      .box-search input {\n        flex: 1;\n        border: none;\n        outline: none;\n      }\n      .box-select-all {\n        width: 36px;\n        line-height: 33px;\n        color: #808080;\n        text-align: center;\n      }\n      .search-button {\n        width: 36px;\n        height: 36px;\n        line-height: 33px;\n        color: #808080;\n      }\n      .pl-1 {\n        padding-left: 1rem;\n      }\n    "]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SelectAutocompleteComponent);
     return SelectAutocompleteComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(SelectAutocompleteComponent, [{
-        type: Component,
-        args: [{
-                selector: 'mat-select-autocomplete',
-                template: "\n    <mat-form-field appearance=\"{{ appearance }}\">\n      <mat-select\n        #selectElem\n        [placeholder]=\"placeholder\"\n        [formControl]=\"formControl\"\n        [multiple]=\"multiple\"\n        [(ngModel)]=\"selectedValue\"\n        (selectionChange)=\"onSelectionChange($event)\"\n      >\n        <div class=\"box-search\">\n          <mat-checkbox\n            *ngIf=\"multiple\"\n            color=\"primary\"\n            class=\"box-select-all\"\n            [(ngModel)]=\"selectAllChecked\"\n            (change)=\"toggleSelectAll($event)\"\n          ></mat-checkbox>\n          <input\n            #searchInput\n            type=\"text\"\n            [ngClass]=\"{ 'pl-1': !multiple }\"\n            (input)=\"filterItem(searchInput.value)\"\n            [placeholder]=\"selectPlaceholder\"\n          />\n          <div\n            class=\"box-search-icon\"\n            (click)=\"filterItem(''); searchInput.value = ''\"\n          >\n            <button mat-icon-button class=\"search-button\">\n              <mat-icon class=\"mat-24\" aria-label=\"Search icon\">clear</mat-icon>\n            </button>\n          </div>\n        </div>\n        <mat-select-trigger>\n          {{ onDisplayString() }}\n        </mat-select-trigger>\n        <mat-option\n          *ngFor=\"let option of options; trackBy: trackByFn\"\n          [disabled]=\"option.disabled\"\n          [value]=\"option[value]\"\n          [style.display]=\"hideOption(option) ? 'none' : 'flex'\"\n          >{{ option[display] }}\n        </mat-option>\n      </mat-select>\n      <mat-hint style=\"color:red\" *ngIf=\"showErrorMsg\">{{ errorMsg }}</mat-hint>\n    </mat-form-field>\n  ",
-                styles: [
-                    "\n      .box-search {\n        margin: 8px;\n        border-radius: 2px;\n        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),\n          0 0 0 1px rgba(0, 0, 0, 0.08);\n        transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);\n        display: flex;\n      }\n      .box-search input {\n        flex: 1;\n        border: none;\n        outline: none;\n      }\n      .box-select-all {\n        width: 36px;\n        line-height: 33px;\n        color: #808080;\n        text-align: center;\n      }\n      .search-button {\n        width: 36px;\n        height: 36px;\n        line-height: 33px;\n        color: #808080;\n      }\n      .pl-1 {\n        padding-left: 1rem;\n      }\n    "
-                ]
-            }]
-    }], function () { return []; }, { selectPlaceholder: [{
-            type: Input
-        }], placeholder: [{
-            type: Input
-        }], options: [{
-            type: Input
-        }], disabled: [{
-            type: Input
-        }], display: [{
-            type: Input
-        }], value: [{
-            type: Input
-        }], formControl: [{
-            type: Input
-        }], errorMsg: [{
-            type: Input
-        }], showErrorMsg: [{
-            type: Input
-        }], selectedOptions: [{
-            type: Input
-        }], multiple: [{
-            type: Input
-        }], labelCount: [{
-            type: Input
-        }], appearance: [{
-            type: Input
-        }], selectionChange: [{
-            type: Output
-        }], selectElem: [{
-            type: ViewChild,
-            args: ['selectElem', { static: true }]
-        }] }); })();
 
 var SelectAutocompleteModule = /** @class */ (function () {
     function SelectAutocompleteModule() {
     }
-    SelectAutocompleteModule.ɵmod = ɵɵdefineNgModule({ type: SelectAutocompleteModule });
-    SelectAutocompleteModule.ɵinj = ɵɵdefineInjector({ factory: function SelectAutocompleteModule_Factory(t) { return new (t || SelectAutocompleteModule)(); }, imports: [[
+    SelectAutocompleteModule = __decorate([
+        NgModule({
+            imports: [
                 FormsModule,
                 CommonModule,
                 MatIconModule,
@@ -303,34 +251,13 @@ var SelectAutocompleteModule = /** @class */ (function () {
                 MatCheckboxModule,
                 MatFormFieldModule,
                 ReactiveFormsModule,
-            ]] });
+            ],
+            declarations: [SelectAutocompleteComponent],
+            exports: [SelectAutocompleteComponent]
+        })
+    ], SelectAutocompleteModule);
     return SelectAutocompleteModule;
 }());
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(SelectAutocompleteModule, { declarations: [SelectAutocompleteComponent], imports: [FormsModule,
-        CommonModule,
-        MatIconModule,
-        MatButtonModule,
-        MatSelectModule,
-        MatCheckboxModule,
-        MatFormFieldModule,
-        ReactiveFormsModule], exports: [SelectAutocompleteComponent] }); })();
-/*@__PURE__*/ (function () { ɵsetClassMetadata(SelectAutocompleteModule, [{
-        type: NgModule,
-        args: [{
-                imports: [
-                    FormsModule,
-                    CommonModule,
-                    MatIconModule,
-                    MatButtonModule,
-                    MatSelectModule,
-                    MatCheckboxModule,
-                    MatFormFieldModule,
-                    ReactiveFormsModule,
-                ],
-                declarations: [SelectAutocompleteComponent],
-                exports: [SelectAutocompleteComponent]
-            }]
-    }], null, null); })();
 
 /*
  * Public API Surface of select-autocomplete

@@ -1,6 +1,5 @@
 import { EventEmitter, OnChanges, DoCheck } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import * as i0 from "@angular/core";
 export declare class SelectAutocompleteComponent implements OnChanges, DoCheck {
     selectPlaceholder: string;
     placeholder: string;
@@ -32,6 +31,4 @@ export declare class SelectAutocompleteComponent implements OnChanges, DoCheck {
     onDisplayString(): string;
     onSelectionChange(val: any): void;
     trackByFn(index: any, item: any): any;
-    static ɵfac: i0.ɵɵFactoryDef<SelectAutocompleteComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDefWithMeta<SelectAutocompleteComponent, "mat-select-autocomplete", never, { "selectPlaceholder": "selectPlaceholder"; "placeholder": "placeholder"; "options": "options"; "disabled": "disabled"; "display": "display"; "value": "value"; "formControl": "formControl"; "errorMsg": "errorMsg"; "showErrorMsg": "showErrorMsg"; "selectedOptions": "selectedOptions"; "multiple": "multiple"; "labelCount": "labelCount"; "appearance": "appearance"; }, { "selectionChange": "selectionChange"; }, never, never>;
 }
