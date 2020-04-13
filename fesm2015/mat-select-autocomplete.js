@@ -33,6 +33,7 @@ let SelectAutocompleteComponent = class SelectAutocompleteComponent {
         // New Options
         this.labelCount = 1;
         this.appearance = 'standard';
+        this.disableOptionCentering = false;
         this.selectionChange = new EventEmitter();
         this.filteredOptions = [];
         this.selectedValue = [];
@@ -212,6 +213,10 @@ __decorate([
     __metadata("design:type", String)
 ], SelectAutocompleteComponent.prototype, "appearance", void 0);
 __decorate([
+    Input(),
+    __metadata("design:type", Object)
+], SelectAutocompleteComponent.prototype, "disableOptionCentering", void 0);
+__decorate([
     Output(),
     __metadata("design:type", EventEmitter)
 ], SelectAutocompleteComponent.prototype, "selectionChange", void 0);
@@ -231,6 +236,7 @@ SelectAutocompleteComponent = __decorate([
         [multiple]="multiple"
         [(ngModel)]="selectedValue"
         (selectionChange)="onSelectionChange($event)"
+        disableOptionCentering="disableOptionCentering"
       >
         <div class="box-search">
           <mat-checkbox

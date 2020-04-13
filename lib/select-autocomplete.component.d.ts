@@ -14,6 +14,7 @@ export declare class SelectAutocompleteComponent implements OnChanges, DoCheck {
     multiple: boolean;
     labelCount: number;
     appearance: 'standard' | 'fill' | 'outline';
+    disableOptionCentering: boolean;
     selectionChange: EventEmitter<any>;
     selectElem: any;
     filteredOptions: Array<any>;
