@@ -30,4 +30,4 @@ Now use <mat-select-autocomplete> with configurations specified in document
 
 
 ## Keywords
-[angular], [angular2+], [angular2+], [angular6], [javascript], [material], [mat-select], [mat-select-autocomplete], [autocomplete]# mat-select-autocomplete
+[angular], [angular2+], [angular2+], [angular6], [javascript], [material], [mat-select], [mat-select-autocomplete], [autocomplete]
