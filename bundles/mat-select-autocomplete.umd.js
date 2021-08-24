@@ -1,236 +1,55 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/forms'), require('@angular/common'), require('@angular/material/icon'), require('@angular/material/select'), require('@angular/material/form-field'), require('@angular/material/button'), require('@angular/material/checkbox')) :
-    typeof define === 'function' && define.amd ? define('mat-select-autocomplete', ['exports', '@angular/core', '@angular/forms', '@angular/common', '@angular/material/icon', '@angular/material/select', '@angular/material/form-field', '@angular/material/button', '@angular/material/checkbox'], factory) :
-    (global = global || self, factory(global['mat-select-autocomplete'] = {}, global.ng.core, global.ng.forms, global.ng.common, global.ng.material.icon, global.ng.material.select, global.ng.material.formField, global.ng.material.button, global.ng.material.checkbox));
-}(this, (function (exports, core, forms, common, icon, select, formField, button, checkbox) { 'use strict';
-
-    /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-    this file except in compliance with the License. You may obtain a copy of the
-    License at http://www.apache.org/licenses/LICENSE-2.0
-
-    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-    MERCHANTABLITY OR NON-INFRINGEMENT.
-
-    See the Apache Version 2.0 License for specific language governing permissions
-    and limitations under the License.
-    ***************************************************************************** */
-    /* global Reflect, Promise */
-
-    var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-
-    function __extends(d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    }
-
-    var __assign = function() {
-        __assign = Object.assign || function __assign(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-                s = arguments[i];
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-            return t;
-        };
-        return __assign.apply(this, arguments);
-    };
-
-    function __rest(s, e) {
-        var t = {};
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-            t[p] = s[p];
-        if (s != null && typeof Object.getOwnPropertySymbols === "function")
-            for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-                if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                    t[p[i]] = s[p[i]];
-            }
-        return t;
-    }
-
-    function __decorate(decorators, target, key, desc) {
-        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-    }
-
-    function __param(paramIndex, decorator) {
-        return function (target, key) { decorator(target, key, paramIndex); }
-    }
-
-    function __metadata(metadataKey, metadataValue) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-    }
-
-    function __awaiter(thisArg, _arguments, P, generator) {
-        function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-            function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-    }
-
-    function __generator(thisArg, body) {
-        var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-        function verb(n) { return function (v) { return step([n, v]); }; }
-        function step(op) {
-            if (f) throw new TypeError("Generator is already executing.");
-            while (_) try {
-                if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-                if (y = 0, t) op = [op[0] & 2, t.value];
-                switch (op[0]) {
-                    case 0: case 1: t = op; break;
-                    case 4: _.label++; return { value: op[1], done: false };
-                    case 5: _.label++; y = op[1]; op = [0]; continue;
-                    case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                    default:
-                        if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                        if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                        if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                        if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                        if (t[2]) _.ops.pop();
-                        _.trys.pop(); continue;
-                }
-                op = body.call(thisArg, _);
-            } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-            if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-        }
-    }
-
-    function __exportStar(m, exports) {
-        for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-    }
-
-    function __values(o) {
-        var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-        if (m) return m.call(o);
-        if (o && typeof o.length === "number") return {
-            next: function () {
-                if (o && i >= o.length) o = void 0;
-                return { value: o && o[i++], done: !o };
-            }
-        };
-        throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-    }
-
-    function __read(o, n) {
-        var m = typeof Symbol === "function" && o[Symbol.iterator];
-        if (!m) return o;
-        var i = m.call(o), r, ar = [], e;
-        try {
-            while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-        }
-        catch (error) { e = { error: error }; }
-        finally {
-            try {
-                if (r && !r.done && (m = i["return"])) m.call(i);
-            }
-            finally { if (e) throw e.error; }
-        }
-        return ar;
-    }
-
-    function __spread() {
-        for (var ar = [], i = 0; i < arguments.length; i++)
-            ar = ar.concat(__read(arguments[i]));
-        return ar;
-    }
-
-    function __spreadArrays() {
-        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-        for (var r = Array(s), k = 0, i = 0; i < il; i++)
-            for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-                r[k] = a[j];
-        return r;
-    };
-
-    function __await(v) {
-        return this instanceof __await ? (this.v = v, this) : new __await(v);
-    }
-
-    function __asyncGenerator(thisArg, _arguments, generator) {
-        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-        var g = generator.apply(thisArg, _arguments || []), i, q = [];
-        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-        function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-        function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-        function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-        function fulfill(value) { resume("next", value); }
-        function reject(value) { resume("throw", value); }
-        function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-    }
-
-    function __asyncDelegator(o) {
-        var i, p;
-        return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-        function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
-    }
-
-    function __asyncValues(o) {
-        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-        var m = o[Symbol.asyncIterator], i;
-        return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-        function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-        function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-    }
-
-    function __makeTemplateObject(cooked, raw) {
-        if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-        return cooked;
-    };
-
-    function __importStar(mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-        result.default = mod;
-        return result;
-    }
-
-    function __importDefault(mod) {
-        return (mod && mod.__esModule) ? mod : { default: mod };
-    }
-
-    function __classPrivateFieldGet(receiver, privateMap) {
-        if (!privateMap.has(receiver)) {
-            throw new TypeError("attempted to get private field on non-instance");
-        }
-        return privateMap.get(receiver);
-    }
-
-    function __classPrivateFieldSet(receiver, privateMap, value) {
-        if (!privateMap.has(receiver)) {
-            throw new TypeError("attempted to set private field on non-instance");
-        }
-        privateMap.set(receiver, value);
-        return value;
-    }
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/forms'), require('@angular/material/form-field'), require('@angular/material/select'), require('@angular/common'), require('@angular/material/button'), require('@angular/material/icon'), require('@angular/material/checkbox'), require('@angular/material/core')) :
+    typeof define === 'function' && define.amd ? define('mat-select-autocomplete', ['exports', '@angular/core', '@angular/forms', '@angular/material/form-field', '@angular/material/select', '@angular/common', '@angular/material/button', '@angular/material/icon', '@angular/material/checkbox', '@angular/material/core'], factory) :
+    (global = global || self, factory(global['mat-select-autocomplete'] = {}, global.ng.core, global.ng.forms, global.ng.material.formField, global.ng.material.select, global.ng.common, global.ng.material.button, global.ng.material.icon, global.ng.material.checkbox, global.ng.material.core));
+}(this, (function (exports, core, forms, formField, select, common, button, icon, checkbox, core$1) { 'use strict';
 
     var SelectAutocompleteService = /** @class */ (function () {
         function SelectAutocompleteService() {
         }
-        SelectAutocompleteService.ɵprov = core["ɵɵdefineInjectable"]({ factory: function SelectAutocompleteService_Factory() { return new SelectAutocompleteService(); }, token: SelectAutocompleteService, providedIn: "root" });
-        SelectAutocompleteService = __decorate([
-            core.Injectable({
-                providedIn: 'root'
-            }),
-            __metadata("design:paramtypes", [])
-        ], SelectAutocompleteService);
+        SelectAutocompleteService.ɵfac = function SelectAutocompleteService_Factory(t) { return new (t || SelectAutocompleteService)(); };
+        SelectAutocompleteService.ɵprov = core["ɵɵdefineInjectable"]({ token: SelectAutocompleteService, factory: SelectAutocompleteService.ɵfac, providedIn: 'root' });
         return SelectAutocompleteService;
     }());
+    /*@__PURE__*/ (function () { core["ɵsetClassMetadata"](SelectAutocompleteService, [{
+            type: core.Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], function () { return []; }, null); })();
 
+    var _c0 = ["selectElem"];
+    function SelectAutocompleteComponent_mat_checkbox_4_Template(rf, ctx) { if (rf & 1) {
+        var _r16 = core["ɵɵgetCurrentView"]();
+        core["ɵɵelementStart"](0, "mat-checkbox", 12);
+        core["ɵɵlistener"]("ngModelChange", function SelectAutocompleteComponent_mat_checkbox_4_Template_mat_checkbox_ngModelChange_0_listener($event) { core["ɵɵrestoreView"](_r16); var ctx_r15 = core["ɵɵnextContext"](); return ctx_r15.selectAllChecked = $event; })("change", function SelectAutocompleteComponent_mat_checkbox_4_Template_mat_checkbox_change_0_listener($event) { core["ɵɵrestoreView"](_r16); var ctx_r17 = core["ɵɵnextContext"](); return ctx_r17.toggleSelectAll($event); });
+        core["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        var ctx_r11 = core["ɵɵnextContext"]();
+        core["ɵɵproperty"]("ngModel", ctx_r11.selectAllChecked);
+    } }
+    function SelectAutocompleteComponent_mat_option_13_Template(rf, ctx) { if (rf & 1) {
+        core["ɵɵelementStart"](0, "mat-option", 13);
+        core["ɵɵtext"](1);
+        core["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        var option_r18 = ctx.$implicit;
+        var ctx_r13 = core["ɵɵnextContext"]();
+        core["ɵɵstyleProp"]("display", ctx_r13.hideOption(option_r18) ? "none" : "flex");
+        core["ɵɵproperty"]("disabled", option_r18.disabled)("value", option_r18[ctx_r13.value]);
+        core["ɵɵadvance"](1);
+        core["ɵɵtextInterpolate1"]("", option_r18[ctx_r13.display], " ");
+    } }
+    function SelectAutocompleteComponent_mat_hint_14_Template(rf, ctx) { if (rf & 1) {
+        core["ɵɵelementStart"](0, "mat-hint", 14);
+        core["ɵɵtext"](1);
+        core["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        var ctx_r14 = core["ɵɵnextContext"]();
+        core["ɵɵadvance"](1);
+        core["ɵɵtextInterpolate"](ctx_r14.errorMsg);
+    } }
+    var _c1 = function (a0) { return { "pl-1": a0 }; };
     var SelectAutocompleteComponent = /** @class */ (function () {
         function SelectAutocompleteComponent() {
             this.selectPlaceholder = 'search...';
@@ -291,10 +110,10 @@
         };
         SelectAutocompleteComponent.prototype.filterItem = function (value) {
             var _this = this;
-            this.filteredOptions = this.options.filter(function (item) { return item[_this.display].toLowerCase().indexOf(value.toLowerCase()) > -1; });
+            this.filteredOptions = this.options.filter(function (item) { return item[_this.display].toLowerCase().localeCompare(value.toLowerCase()) > -1; });
             this.selectAllChecked = true;
             this.filteredOptions.forEach(function (item) {
-                if (!_this.selectedValue.includes(item[_this.value])) {
+                if (_this.multiple && !_this.selectedValue.includes(item[_this.value])) {
                     _this.selectAllChecked = false;
                 }
             });
@@ -355,7 +174,6 @@
                     if (displayOption.length) {
                         this.displayString = displayOption[0][this.display];
                     }
-                    // console.log(this.selectedValue);
                 }
             }
             return this.displayString;
@@ -377,87 +195,104 @@
         SelectAutocompleteComponent.prototype.trackByFn = function (index, item) {
             return item.value;
         };
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "selectPlaceholder", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", String)
-        ], SelectAutocompleteComponent.prototype, "placeholder", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "options", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "disabled", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "display", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "value", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", forms.FormControl)
-        ], SelectAutocompleteComponent.prototype, "formControl", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "errorMsg", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "showErrorMsg", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "selectedOptions", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "multiple", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "labelCount", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", String)
-        ], SelectAutocompleteComponent.prototype, "appearance", void 0);
-        __decorate([
-            core.Input(),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "disableOptionCentering", void 0);
-        __decorate([
-            core.Output(),
-            __metadata("design:type", core.EventEmitter)
-        ], SelectAutocompleteComponent.prototype, "selectionChange", void 0);
-        __decorate([
-            core.ViewChild('selectElem', { static: true }),
-            __metadata("design:type", Object)
-        ], SelectAutocompleteComponent.prototype, "selectElem", void 0);
-        SelectAutocompleteComponent = __decorate([
-            core.Component({
-                selector: 'mat-select-autocomplete',
-                template: "\n    <mat-form-field appearance=\"{{ appearance }}\">\n      <mat-select\n        #selectElem\n        [placeholder]=\"placeholder\"\n        [formControl]=\"formControl\"\n        [multiple]=\"multiple\"\n        [(ngModel)]=\"selectedValue\"\n        (selectionChange)=\"onSelectionChange($event)\"\n        disableOptionCentering=\"disableOptionCentering\"\n      >\n        <div class=\"box-search\">\n          <mat-checkbox\n            *ngIf=\"multiple\"\n            color=\"primary\"\n            class=\"box-select-all\"\n            [(ngModel)]=\"selectAllChecked\"\n            (change)=\"toggleSelectAll($event)\"\n          ></mat-checkbox>\n          <input\n            #searchInput\n            type=\"text\"\n            [ngClass]=\"{ 'pl-1': !multiple }\"\n            (input)=\"filterItem(searchInput.value)\"\n            [placeholder]=\"selectPlaceholder\"\n          />\n          <div\n            class=\"box-search-icon\"\n            (click)=\"filterItem(''); searchInput.value = ''\"\n          >\n            <button mat-icon-button class=\"search-button\">\n              <mat-icon class=\"mat-24\" aria-label=\"Search icon\">clear</mat-icon>\n            </button>\n          </div>\n        </div>\n        <mat-select-trigger>\n          {{ onDisplayString() }}\n        </mat-select-trigger>\n        <mat-option\n          *ngFor=\"let option of options; trackBy: trackByFn\"\n          [disabled]=\"option.disabled\"\n          [value]=\"option[value]\"\n          [style.display]=\"hideOption(option) ? 'none' : 'flex'\"\n          >{{ option[display] }}\n        </mat-option>\n      </mat-select>\n      <mat-hint style=\"color:red\" *ngIf=\"showErrorMsg\">{{ errorMsg }}</mat-hint>\n    </mat-form-field>\n  ",
-                styles: ["\n      .box-search {\n        margin: 8px;\n        border-radius: 2px;\n        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),\n          0 0 0 1px rgba(0, 0, 0, 0.08);\n        transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);\n        display: flex;\n      }\n      .box-search input {\n        flex: 1;\n        border: none;\n        outline: none;\n      }\n      .box-select-all {\n        width: 36px;\n        line-height: 33px;\n        color: #808080;\n        text-align: center;\n      }\n      .search-button {\n        width: 36px;\n        height: 36px;\n        line-height: 33px;\n        color: #808080;\n      }\n      .pl-1 {\n        padding-left: 1rem;\n      }\n    "]
-            }),
-            __metadata("design:paramtypes", [])
-        ], SelectAutocompleteComponent);
+        SelectAutocompleteComponent.ɵfac = function SelectAutocompleteComponent_Factory(t) { return new (t || SelectAutocompleteComponent)(); };
+        SelectAutocompleteComponent.ɵcmp = core["ɵɵdefineComponent"]({ type: SelectAutocompleteComponent, selectors: [["mat-select-autocomplete"]], viewQuery: function SelectAutocompleteComponent_Query(rf, ctx) { if (rf & 1) {
+                core["ɵɵstaticViewQuery"](_c0, true);
+            } if (rf & 2) {
+                var _t;
+                core["ɵɵqueryRefresh"](_t = core["ɵɵloadQuery"]()) && (ctx.selectElem = _t.first);
+            } }, inputs: { selectPlaceholder: "selectPlaceholder", placeholder: "placeholder", options: "options", disabled: "disabled", display: "display", value: "value", formControl: "formControl", errorMsg: "errorMsg", showErrorMsg: "showErrorMsg", selectedOptions: "selectedOptions", multiple: "multiple", labelCount: "labelCount", appearance: "appearance", disableOptionCentering: "disableOptionCentering" }, outputs: { selectionChange: "selectionChange" }, features: [core["ɵɵNgOnChangesFeature"]], decls: 15, vars: 14, consts: [[3, "appearance"], ["disableOptionCentering", "disableOptionCentering", 3, "placeholder", "formControl", "multiple", "ngModel", "ngModelChange", "selectionChange"], ["selectElem", ""], [1, "box-search"], ["color", "primary", "class", "box-select-all", 3, "ngModel", "ngModelChange", "change", 4, "ngIf"], ["type", "text", 3, "ngClass", "placeholder", "input"], ["searchInput", ""], [1, "box-search-icon", 3, "click"], ["mat-icon-button", "", 1, "search-button"], ["aria-label", "Search icon", 1, "mat-24"], [3, "disabled", "value", "display", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["style", "color:red", 4, "ngIf"], ["color", "primary", 1, "box-select-all", 3, "ngModel", "ngModelChange", "change"], [3, "disabled", "value"], [2, "color", "red"]], template: function SelectAutocompleteComponent_Template(rf, ctx) { if (rf & 1) {
+                var _r19 = core["ɵɵgetCurrentView"]();
+                core["ɵɵelementStart"](0, "mat-form-field", 0);
+                core["ɵɵelementStart"](1, "mat-select", 1, 2);
+                core["ɵɵlistener"]("ngModelChange", function SelectAutocompleteComponent_Template_mat_select_ngModelChange_1_listener($event) { return ctx.selectedValue = $event; })("selectionChange", function SelectAutocompleteComponent_Template_mat_select_selectionChange_1_listener($event) { return ctx.onSelectionChange($event); });
+                core["ɵɵelementStart"](3, "div", 3);
+                core["ɵɵtemplate"](4, SelectAutocompleteComponent_mat_checkbox_4_Template, 1, 1, "mat-checkbox", 4);
+                core["ɵɵelementStart"](5, "input", 5, 6);
+                core["ɵɵlistener"]("input", function SelectAutocompleteComponent_Template_input_input_5_listener() { core["ɵɵrestoreView"](_r19); var _r12 = core["ɵɵreference"](6); return ctx.filterItem(_r12.value); });
+                core["ɵɵelementEnd"]();
+                core["ɵɵelementStart"](7, "div", 7);
+                core["ɵɵlistener"]("click", function SelectAutocompleteComponent_Template_div_click_7_listener() { core["ɵɵrestoreView"](_r19); var _r12 = core["ɵɵreference"](6); ctx.filterItem(""); return _r12.value = ""; });
+                core["ɵɵelementStart"](8, "button", 8);
+                core["ɵɵelementStart"](9, "mat-icon", 9);
+                core["ɵɵtext"](10, "clear");
+                core["ɵɵelementEnd"]();
+                core["ɵɵelementEnd"]();
+                core["ɵɵelementEnd"]();
+                core["ɵɵelementEnd"]();
+                core["ɵɵelementStart"](11, "mat-select-trigger");
+                core["ɵɵtext"](12);
+                core["ɵɵelementEnd"]();
+                core["ɵɵtemplate"](13, SelectAutocompleteComponent_mat_option_13_Template, 2, 5, "mat-option", 10);
+                core["ɵɵelementEnd"]();
+                core["ɵɵtemplate"](14, SelectAutocompleteComponent_mat_hint_14_Template, 2, 1, "mat-hint", 11);
+                core["ɵɵelementEnd"]();
+            } if (rf & 2) {
+                core["ɵɵpropertyInterpolate"]("appearance", ctx.appearance);
+                core["ɵɵadvance"](1);
+                core["ɵɵproperty"]("placeholder", ctx.placeholder)("formControl", ctx.formControl)("multiple", ctx.multiple)("ngModel", ctx.selectedValue);
+                core["ɵɵadvance"](3);
+                core["ɵɵproperty"]("ngIf", ctx.multiple);
+                core["ɵɵadvance"](1);
+                core["ɵɵproperty"]("ngClass", core["ɵɵpureFunction1"](12, _c1, !ctx.multiple))("placeholder", ctx.selectPlaceholder);
+                core["ɵɵadvance"](7);
+                core["ɵɵtextInterpolate1"](" ", ctx.onDisplayString(), " ");
+                core["ɵɵadvance"](1);
+                core["ɵɵproperty"]("ngForOf", ctx.options)("ngForTrackBy", ctx.trackByFn);
+                core["ɵɵadvance"](1);
+                core["ɵɵproperty"]("ngIf", ctx.showErrorMsg);
+            } }, directives: [formField.MatFormField, select.MatSelect, forms.NgControlStatus, forms.FormControlDirective, common.NgIf, common.NgClass, button.MatButton, icon.MatIcon, select.MatSelectTrigger, common.NgForOf, checkbox.MatCheckbox, forms.NgModel, core$1.MatOption, formField.MatHint], styles: [".box-search[_ngcontent-%COMP%] {\n        margin: 8px;\n        border-radius: 2px;\n        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),\n          0 0 0 1px rgba(0, 0, 0, 0.08);\n        transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);\n        display: flex;\n      }\n      .box-search[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n        flex: 1;\n        border: none;\n        outline: none;\n      }\n      .box-select-all[_ngcontent-%COMP%] {\n        width: 36px;\n        line-height: 33px;\n        color: #808080;\n        text-align: center;\n      }\n      .search-button[_ngcontent-%COMP%] {\n        width: 36px;\n        height: 36px;\n        line-height: 33px;\n        color: #808080;\n      }\n      .pl-1[_ngcontent-%COMP%] {\n        padding-left: 1rem;\n      }"] });
         return SelectAutocompleteComponent;
     }());
+    /*@__PURE__*/ (function () { core["ɵsetClassMetadata"](SelectAutocompleteComponent, [{
+            type: core.Component,
+            args: [{
+                    selector: 'mat-select-autocomplete',
+                    template: "\n    <mat-form-field appearance=\"{{ appearance }}\">\n      <mat-select\n        #selectElem\n        [placeholder]=\"placeholder\"\n        [formControl]=\"formControl\"\n        [multiple]=\"multiple\"\n        [(ngModel)]=\"selectedValue\"\n        (selectionChange)=\"onSelectionChange($event)\"\n        disableOptionCentering=\"disableOptionCentering\"\n      >\n        <div class=\"box-search\">\n          <mat-checkbox\n            *ngIf=\"multiple\"\n            color=\"primary\"\n            class=\"box-select-all\"\n            [(ngModel)]=\"selectAllChecked\"\n            (change)=\"toggleSelectAll($event)\"\n          ></mat-checkbox>\n          <input\n            #searchInput\n            type=\"text\"\n            [ngClass]=\"{ 'pl-1': !multiple }\"\n            (input)=\"filterItem(searchInput.value)\"\n            [placeholder]=\"selectPlaceholder\"\n          />\n          <div\n            class=\"box-search-icon\"\n            (click)=\"filterItem(''); searchInput.value = ''\"\n          >\n            <button mat-icon-button class=\"search-button\">\n              <mat-icon class=\"mat-24\" aria-label=\"Search icon\">clear</mat-icon>\n            </button>\n          </div>\n        </div>\n        <mat-select-trigger>\n          {{ onDisplayString() }}\n        </mat-select-trigger>\n        <mat-option\n          *ngFor=\"let option of options; trackBy: trackByFn\"\n          [disabled]=\"option.disabled\"\n          [value]=\"option[value]\"\n          [style.display]=\"hideOption(option) ? 'none' : 'flex'\"\n          >{{ option[display] }}\n        </mat-option>\n      </mat-select>\n      <mat-hint style=\"color:red\" *ngIf=\"showErrorMsg\">{{ errorMsg }}</mat-hint>\n    </mat-form-field>\n  ",
+                    styles: [
+                        "\n      .box-search {\n        margin: 8px;\n        border-radius: 2px;\n        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),\n          0 0 0 1px rgba(0, 0, 0, 0.08);\n        transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);\n        display: flex;\n      }\n      .box-search input {\n        flex: 1;\n        border: none;\n        outline: none;\n      }\n      .box-select-all {\n        width: 36px;\n        line-height: 33px;\n        color: #808080;\n        text-align: center;\n      }\n      .search-button {\n        width: 36px;\n        height: 36px;\n        line-height: 33px;\n        color: #808080;\n      }\n      .pl-1 {\n        padding-left: 1rem;\n      }\n    "
+                    ]
+                }]
+        }], function () { return []; }, { selectPlaceholder: [{
+                type: core.Input
+            }], placeholder: [{
+                type: core.Input
+            }], options: [{
+                type: core.Input
+            }], disabled: [{
+                type: core.Input
+            }], display: [{
+                type: core.Input
+            }], value: [{
+                type: core.Input
+            }], formControl: [{
+                type: core.Input
+            }], errorMsg: [{
+                type: core.Input
+            }], showErrorMsg: [{
+                type: core.Input
+            }], selectedOptions: [{
+                type: core.Input
+            }], multiple: [{
+                type: core.Input
+            }], labelCount: [{
+                type: core.Input
+            }], appearance: [{
+                type: core.Input
+            }], disableOptionCentering: [{
+                type: core.Input
+            }], selectionChange: [{
+                type: core.Output
+            }], selectElem: [{
+                type: core.ViewChild,
+                args: ['selectElem', { static: true }]
+            }] }); })();
 
     var SelectAutocompleteModule = /** @class */ (function () {
         function SelectAutocompleteModule() {
         }
-        SelectAutocompleteModule = __decorate([
-            core.NgModule({
-                imports: [
+        SelectAutocompleteModule.ɵmod = core["ɵɵdefineNgModule"]({ type: SelectAutocompleteModule });
+        SelectAutocompleteModule.ɵinj = core["ɵɵdefineInjector"]({ factory: function SelectAutocompleteModule_Factory(t) { return new (t || SelectAutocompleteModule)(); }, imports: [[
                     forms.FormsModule,
                     common.CommonModule,
                     icon.MatIconModule,
@@ -466,13 +301,34 @@
                     checkbox.MatCheckboxModule,
                     formField.MatFormFieldModule,
                     forms.ReactiveFormsModule,
-                ],
-                declarations: [SelectAutocompleteComponent],
-                exports: [SelectAutocompleteComponent]
-            })
-        ], SelectAutocompleteModule);
+                ]] });
         return SelectAutocompleteModule;
     }());
+    (function () { (typeof ngJitMode === "undefined" || ngJitMode) && core["ɵɵsetNgModuleScope"](SelectAutocompleteModule, { declarations: [SelectAutocompleteComponent], imports: [forms.FormsModule,
+            common.CommonModule,
+            icon.MatIconModule,
+            button.MatButtonModule,
+            select.MatSelectModule,
+            checkbox.MatCheckboxModule,
+            formField.MatFormFieldModule,
+            forms.ReactiveFormsModule], exports: [SelectAutocompleteComponent] }); })();
+    /*@__PURE__*/ (function () { core["ɵsetClassMetadata"](SelectAutocompleteModule, [{
+            type: core.NgModule,
+            args: [{
+                    imports: [
+                        forms.FormsModule,
+                        common.CommonModule,
+                        icon.MatIconModule,
+                        button.MatButtonModule,
+                        select.MatSelectModule,
+                        checkbox.MatCheckboxModule,
+                        formField.MatFormFieldModule,
+                        forms.ReactiveFormsModule,
+                    ],
+                    declarations: [SelectAutocompleteComponent],
+                    exports: [SelectAutocompleteComponent]
+                }]
+        }], null, null); })();
 
     exports.SelectAutocompleteComponent = SelectAutocompleteComponent;
     exports.SelectAutocompleteModule = SelectAutocompleteModule;

@@ -1,6 +1,6 @@
 {
   "name": "mat-select-autocomplete",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Angular material select component with autocomplete and select all features",
   "keywords": [
     "Angular",
@@ -26,6 +26,8 @@
   "fesm5": "fesm5/mat-select-autocomplete.js",
   "fesm2015": "fesm2015/mat-select-autocomplete.js",
   "typings": "mat-select-autocomplete.d.ts",
-  "metadata": "mat-select-autocomplete.metadata.json",
-  "sideEffects": false
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
+  }
 }
